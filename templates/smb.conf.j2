@@ -82,6 +82,10 @@
   include = {{ samba_configuration_dir }}/{{ samba_global_include }}
 {% endif %}
 
+{% if samba_host_dfs is defined %}
+  host msdfs = {{ samba_host_dfs }}
+{% endif %}
+
 {% if samba_load_homes %}
 ## Make home directories accessible
 [homes]
